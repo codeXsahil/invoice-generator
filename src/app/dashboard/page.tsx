@@ -18,9 +18,11 @@ export default function Home() {
       <div className="flex justify-between">
         <h1 className="text-3xl font-bold">Invoices</h1>
         <p>
-          <Button variant="outline" className="inline-flex gap-2">
-            <CirclePlus className="w-4 h-4" />
-            create invoices
+          <Button variant="outline" className="inline-flex gap-2" asChild>
+            <Link href="/invoices/new">
+              <CirclePlus className="w-4 h-4" />
+              create invoices
+            </Link>
           </Button>
         </p>
       </div>
