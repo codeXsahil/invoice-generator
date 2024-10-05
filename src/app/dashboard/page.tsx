@@ -1,3 +1,4 @@
+import { CirclePlus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import {
@@ -13,8 +14,16 @@ import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
   return (
-    <main className="flex flex-col justify-center h-full text-center gap-6 max-w-5xl mx-auto">
-      <h1 className="text-5xl font-bold">Dashboard</h1>
+    <main className="flex flex-col justify-center h-full text-center gap-6 max-w-5xl mx-auto my-12">
+      <div className="flex justify-between">
+        <h1 className="text-3xl font-bold">Invoices</h1>
+        <p>
+          <Button variant="outline" className="inline-flex gap-2">
+            <CirclePlus className="w-4 h-4" />
+            create invoices
+          </Button>
+        </p>
+      </div>
 
       <Table>
         <TableCaption>A list of your recent invoices.</TableCaption>
