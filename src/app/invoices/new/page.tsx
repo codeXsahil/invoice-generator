@@ -2,13 +2,18 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@radix-ui/react-label";
+import { sql } from "drizzle-orm";
+import { db } from "@/db";
 
-export default function Home() {
+export default async function Home() {
+  const results = await db.execute(sql`SELECT current_database()`);
+  console.log("results", results);
   return (
     <main className="flex flex-col justify-center h-full text-center gap-6 max-w-5xl mx-auto my-10">
       <div className="flex justify-between">
         <h1 className="text-5xl font-bold mx-5">Invoices</h1>
       </div>
+
       <div>
         <form className="grid gap-4 max-w-xs">
           <div>
@@ -25,7 +30,7 @@ export default function Home() {
           </div>
           <div>
             <Label className="block text-sm font-semibold">Description</Label>
-            <Textarea></Textarea>
+            <Textarea id="description" name="description"></Textarea>
           </div>
           <div>
             <Button className=" w-full font-semibold">Submit</Button>

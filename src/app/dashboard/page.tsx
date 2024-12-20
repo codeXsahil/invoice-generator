@@ -44,7 +44,7 @@ export default function Home() {
               <span className="font-semibold ">31/01/2003</span>
             </TableCell>
             <TableCell className="text-left p-4">
-              <span className="font-semibold">Sahil </span>
+              <span className="font-semibold">Ram</span>
             </TableCell>
             <TableCell className="text-left p-4">
               <span>TEmpmail@gmail.com </span>
